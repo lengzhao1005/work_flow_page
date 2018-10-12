@@ -1,0 +1,70 @@
+body {
+	margin: 10px;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+.el-tag {
+    border-radius: 0;
+	background-color: #e2dee0;
+	color: #fff;
+	border: none;
+}
+.el-tag--success {
+	background-color: #0f0;
+}
+.el-tag--info, .el-tag--low {
+	background-color: #78f;
+}
+.el-tag--warning, .el-tag--middle {
+	background-color: #e3e611;
+}
+.el-tag--danger, .el-tag--high {
+	background-color: #f00;
+}
+.el-tag--mini {
+	padding: 0 2px;
+	font-size: 10px;
+	line-height: 17px;	
+	height: 15px;	
+}
+
+.el-checkbox.big .el-checkbox__inner {
+	width: 24px;
+	height: 24px;
+	border-width: 2px;
+}
+.el-checkbox.big .el-checkbox__inner::after{
+	top: 3px;
+	left: 8px;
+	width: 4px;	
+	height: 10px;	
+}
+
+
+.with-line {
+	width: 100%;
+	position: relative;
+	text-align: center;
+	font-size: 13px;
+}
+.with-line:before {
+	content: "";
+	border-top: 1px solid #ddd;
+	display: block;
+	position: absolute;
+	width: 40%;
+	top: 50%;
+	left: 0
+}
+.with-line:after {
+	content: "";
+	border-top: 1px solid #ddd;
+	display: block;
+	position: absolute;
+	width: 40%;
+	top: 50%;
+	right: 0
+}
+
