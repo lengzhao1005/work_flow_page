@@ -52,7 +52,6 @@ function AppSocket(options)
 	this.webSocket = new WebSocket(opts.url);
 	this.webSocket.onopen = function(event){
 		console.log('onopen');
-		console.log(event);
 
 		$.each(opts.sendMsgsOnInit, function(k, sendMsg){
 			_self.send(sendMsg);
@@ -60,7 +59,7 @@ function AppSocket(options)
 	}
 	this.webSocket.onmessage = function(event){
 		console.log('onmessage');
-		console.log(event);
+
 		var event_data = JSON.parse(event.data);
 		
 		if(event_data.type == 'auth_fail'){
@@ -74,12 +73,9 @@ function AppSocket(options)
 	}
 	this.webSocket.onerror = function(event){
 		console.log('onerror');
-		console.log(event);
-		
 	}
 	this.webSocket.onclose = function(event){
 		console.log('onclose');
-		console.log(event);
 	}
 	
 	this.send = function(sendMsg){

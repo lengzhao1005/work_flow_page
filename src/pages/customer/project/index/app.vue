@@ -59,6 +59,7 @@ export default {
 					};
 				}, 
 				tasklist_project_init: function(ret){
+				    console.log(ret);
 					var taskListDataSource = [];
 					$.each(ret.data.tasks, function(k, t){
 						taskListDataSource.push({
@@ -76,8 +77,27 @@ export default {
 				}, 
 				task_new: function(ret){
 					console.log('task_new');
-					console.log(ret);
-				}
+					thisObj.taskListDataSource.unshift(ret.data);
+				},
+                task_modify: function(ret){
+                    console.log('task_modify');
+
+                    console.log(ret);
+                    $.each(thisObj.taskListDataSource, function(k, t){
+
+                        if(ret.data.id_task == t.id_task){
+                            // thisObj.taskListDataSource[k] = ret.data;
+                            thisObj.taskListDataSource[k].id_project = ret.data.id_project;
+							thisObj.taskListDataSource[k].id_task = ret.data.id_task;
+							thisObj.taskListDataSource[k].name = ret.data.name;
+							thisObj.taskListDataSource[k].content = ret.data.content;
+							thisObj.taskListDataSource[k].priority = {type: ret.data.priority.type, txt: ret.data.priority.txt};
+                            thisObj.taskListDataSource[k].mine = ret.datamine;
+							thisObj.taskListDataSource[k].completed = ret.data.completed;
+						}
+
+                    });
+                },
 			}
 		});
 		
